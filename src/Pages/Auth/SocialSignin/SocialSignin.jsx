@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsGithub } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase.init";
 import { useSignInWithGithub } from "react-firebase-hooks/auth";
 import Spinner from "../../Shared/Spinner/Spinner";
 
-const SocialSignin = () => {
+const SocialSignin = ({ from }) => {
   const [signInWithGithub, user, loading, error] = useSignInWithGithub(auth);
   const navigate = useNavigate();
+  const [fromC, setFromC] = useState("/");
+
+  useEffect(() => {
+    setFromC(from);
+  }, []);
 
   if (loading) return <Spinner />;
   if (user) {
-    navigate("/");
+    navigate(fromC, { replace: true });
   }
   return (
     <>
