@@ -7,6 +7,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase.init";
 import Spinner from "../../Shared/Spinner/Spinner";
+import SocialSignin from "../SocialSignin/SocialSignin";
 
 const Signin = () => {
   const emailRef = useRef("");
@@ -125,6 +126,8 @@ const Signin = () => {
                   </Link>
                 </p>
               </div>
+
+              <SocialSignin from={from} />
             </form>
           </div>
         </div>
