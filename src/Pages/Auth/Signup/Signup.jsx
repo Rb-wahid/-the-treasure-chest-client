@@ -142,6 +142,8 @@ const Signup = () => {
                   </Link>
                 </p>
               </div>
+
+              <SocialSignin />
             </form>
           </div>
         </div>
