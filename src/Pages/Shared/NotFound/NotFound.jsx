@@ -41,6 +41,30 @@ const NotFound = () => {
           alt=""
         />
       </div>
+
+      {/* For mobile */}
+      <div class="visible md:hidden flex mt-28 justify-center w-screen h-screen">
+        <div class="px-4 lg:py-12">
+          <div class="lg:gap-4 lg:flex">
+            <div class="flex flex-col items-center justify-center md:py-24 lg:py-32">
+              <h1 class="font-bold text-blue-600 text-9xl">404</h1>
+              <p class="mb-2 text-2xl font-bold text-center text-gray-800 md:text-3xl">
+                <span class="text-red-500">Oops!</span> Page not found
+              </p>
+              <p class="mb-8 text-center text-gray-500 md:text-lg">
+                The page you’re looking for doesn’t exist.
+              </p>
+              <button
+                onClick={() => navigate("/")}
+                type="button"
+                class=" inline-block px-10 py-5 bg-black text-white font-bold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out"
+              >
+                Back To Home
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
