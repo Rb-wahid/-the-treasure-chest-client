@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase.init";
 import {
@@ -41,6 +41,10 @@ const Signup = () => {
 
   let error = errorEmailPass || errorUpdateProfile || errorUser;
   let isLoading = loadingEmailPass || loadingUser || updating;
+
+  useEffect(() => {
+    setIsChecked(false);
+  }, [isLoading]);
 
   if (isLoading) {
     return <Spinner />;
