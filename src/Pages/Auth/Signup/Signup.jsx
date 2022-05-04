@@ -43,6 +43,8 @@ const Signup = () => {
   let isLoading = loadingEmailPass || loadingUser || updating;
 
   useEffect(() => {
+    // when got error. Ischecked is true & issue on disabling signup btn.
+    // handle that issue
     setIsChecked(false);
   }, [isLoading]);
 
