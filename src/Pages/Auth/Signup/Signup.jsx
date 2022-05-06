@@ -8,6 +8,7 @@ import {
 } from "react-firebase-hooks/auth";
 import SocialSignin from "../SocialSignin/SocialSignin";
 import Spinner from "../../Shared/Spinner/Spinner";
+import useToken from "../../hooks/useToken";
 
 const Signup = () => {
   const nameRef = useRef("");
@@ -23,6 +24,7 @@ const Signup = () => {
   const [updateProfile, updating, errorUpdateProfile] = useUpdateProfile(auth);
 
   const [user, loadingUser, errorUser] = useAuthState(auth);
+  const [token] = useToken(user);
   const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
@@ -52,7 +54,7 @@ const Signup = () => {
     return <Spinner />;
   }
 
-  if (user) {
+  if (token) {
     navigate("/");
   }
 
