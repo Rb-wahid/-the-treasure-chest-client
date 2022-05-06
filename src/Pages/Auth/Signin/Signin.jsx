@@ -6,6 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase.init";
+import useToken from "../../hooks/useToken";
 import Spinner from "../../Shared/Spinner/Spinner";
 import SocialSignin from "../SocialSignin/SocialSignin";
 
@@ -21,6 +22,7 @@ const Signin = () => {
   const [sendPasswordResetEmail, sending, errorResetPass] =
     useSendPasswordResetEmail(auth);
   const [user, loadingUser, errorUser] = useAuthState(auth);
+  const [token] = useToken(user)
   const [hasEmail, setHasEmail] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
@@ -48,7 +50,7 @@ const Signin = () => {
   };
   if (isLoading) return <Spinner />;
 
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
   return (
