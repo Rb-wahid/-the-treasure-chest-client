@@ -1,20 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import useUserEmail from "./useUserEmail";
 
 const useToken = (user) => {
+  const [email, loading] = useUserEmail();
   const [token, setToken] = useState("");
   useEffect(() => {
     const fetching = async () => {
       const { data } = await axios.post(
-        `https://the-treasure-chest.herokuapp.com/gettoken?email=${user.email}`
+        `https://the-treasure-chest.herokuapp.com/gettoken?email=${email}`
       );
       setToken(data.token);
       localStorage.setItem("token", data.token);
     };
-    if (user) {
+    if (!loading) {
       fetching();
     }
-  }, [user]);
+  }, [email, loading]);
   return [token];
 };
 
