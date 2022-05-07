@@ -1,13 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import useInventories from "../../hooks/useInventories";
 import Spinner from "../../Shared/Spinner/Spinner";
 import Inventory from "../Inventory/Inventory";
 
 const Inventories = ({ size }) => {
   let [items = [], isError, isLoading] = useInventories();
-  const navigate = useNavigate();
-  console.log("loading", isLoading);
   if (isLoading) return <Spinner />;
   if (size) {
     items = items.slice(0, size);
@@ -28,17 +25,7 @@ const Inventories = ({ size }) => {
               />
             ))}
           </div>
-          <div className="flex space-x-2 justify-center mt-8">
-            <button
-              onClick={() => navigate(`/manageinventories`)}
-              type="button"
-              data-mdb-ripple="true"
-              data-mdb-ripple-color="light"
-              className="inline-block px-6 py-3 font-semibold bg-blue-600 text-white text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-            >
-              Manage Inventories
-            </button>
-          </div>
+          
         </>
       )}
     </div>
