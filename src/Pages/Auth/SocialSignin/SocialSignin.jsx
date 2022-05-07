@@ -12,12 +12,14 @@ const SocialSignin = ({ from }) => {
   const [fromC, setFromC] = useState("/");
 
   useEffect(() => {
-    if (from) setFromC(from);
-  }, [from]);
+    if (from) {
+      setFromC(from);
+      if (token) {
+        navigate(fromC, { replace: true });
+      }
+    }
+  }, [token]);
 
-  if (token) {
-    navigate(fromC, { replace: true });
-  }
   return (
     <>
       <div className="flex items-center my-3 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
