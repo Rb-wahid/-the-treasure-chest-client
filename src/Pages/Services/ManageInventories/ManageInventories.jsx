@@ -4,14 +4,24 @@ import useInventories from "../../hooks/useInventories";
 import Spinner from "../../Shared/Spinner/Spinner";
 import AddInventory from "../AddInventory/AddInventory";
 import Inventories from "../Inventories/Inventories";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import auth from "../../../Firebase.init";
 
 const ManageInventories = () => {
   let [items, isError, isLoading] = useInventories();
 
   const [activeForManage, setActiveForManage] = useState(true);
   const [activeForAdd, setActiveForAdd] = useState(false);
+  const navigate = useNavigate();
+
   if (isLoading) return <Spinner />;
   const error = isError;
+
+  if (error?.message?.includes("403") || error?.message?.includes("401")) {
+    signOut(auth);
+    navigate("/signin");
+  }
 
   return (
     <div className="md:max-w-7xl md:mx-auto md:mt-12">

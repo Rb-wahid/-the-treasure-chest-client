@@ -5,6 +5,8 @@ import { useSWRConfig } from "swr";
 import useInventories from "../../hooks/useInventories";
 import useUserEmail from "../../hooks/useUserEmail";
 import Spinner from "../../Shared/Spinner/Spinner";
+import { signOut } from "firebase/auth";
+import auth from "../../../Firebase.init";
 
 const InventoryDetails = () => {
   const { mutate } = useSWRConfig();
@@ -72,6 +74,11 @@ const InventoryDetails = () => {
   const { name, img, price, supplier, description, quantity, sold } = data;
   if (isLoading || loading || loadingUser) return <Spinner />;
   const error = isError || errorUser;
+
+  if (error?.message?.includes("403") || error?.message?.includes("401")) {
+    signOut(auth);
+    navigate("/signin");
+  }
 
   return (
     <div className="flex flex-col justify-center my-5 max-w-3xl mx-2 md:mx-auto ">

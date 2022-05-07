@@ -4,15 +4,24 @@ import useInventories from "../../hooks/useInventories";
 import useUserEmail from "../../hooks/useUserEmail";
 import Spinner from "../../Shared/Spinner/Spinner";
 import DisplayInvevtory from "../DisplayInvevtory/DisplayInvevtory";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import auth from "../../../Firebase.init";
 
 const MyItems = () => {
   const [email, loadingUser, errorUser] = useUserEmail();
   const URL = `https://the-treasure-chest.herokuapp.com/myinventory?email=${email}`;
   let [myItems = [], isError, isLoading] = useInventories(URL);
+  const navigate = useNavigate();
 
   if (isLoading || loadingUser) return <Spinner />;
 
   const error = isError || errorUser;
+
+  if (error?.message?.includes("403") || error?.message?.includes("401")) {
+    signOut(auth);
+    navigate("/signin");
+  }
 
   return (
     <div>
