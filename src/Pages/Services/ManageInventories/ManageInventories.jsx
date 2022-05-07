@@ -3,7 +3,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import useInventories from "../../hooks/useInventories";
 import Spinner from "../../Shared/Spinner/Spinner";
 import AddInventory from "../AddInventory/AddInventory";
-import DisplayInvevtory from "../DisplayInvevtory/DisplayInvevtory";
+import Inventories from "../Inventories/Inventories";
 
 const ManageInventories = () => {
   let [items, isError, isLoading] = useInventories();
@@ -22,7 +22,7 @@ const ManageInventories = () => {
           <div className="flex items-center justify-center">
             <div className="inline-flex shadow-md hover:shadow-lg focus:shadow-lg">
               <Link
-                to="displayinvevtory"
+                to="/manageinventories"
                 onClick={() => {
                   setActiveForManage(true);
                   setActiveForAdd(false);
@@ -75,11 +75,11 @@ const ManageInventories = () => {
             </div>
           </div>
           <Routes>
-            <Route path="/" element={<DisplayInvevtory items={items} />} />
-            <Route
+            <Route path="/" element={<Inventories items={items} />} />
+            {/* <Route
               path="displayinvevtory"
-              element={<DisplayInvevtory items={items} />}
-            />
+              element={<Displayinvevtory items={items} />}
+            /> */}
             <Route path="addinvevtory" element={<AddInventory />} />
           </Routes>
         </>
