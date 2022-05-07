@@ -28,7 +28,7 @@ const MyItems = () => {
             <Link
               to="/manageinventories/addinvevtory"
               type="button"
-              className=" inline-block px-6 py-3 bg-black text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out"
+              className=" inline-block px-6 py-3 bg-black text-white font-medium text-sm leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out"
             >
               Add Inventory
             </Link>
