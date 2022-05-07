@@ -11,6 +11,8 @@ import MyItems from "./Pages/Services/MyItems/MyItems";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Blogs from "./Pages/Blogs/Blogs";
 import InventoryReport from "./Pages/InventoryReport/InventoryReport";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -45,6 +47,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

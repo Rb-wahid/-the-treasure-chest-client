@@ -5,6 +5,7 @@ import { useSWRConfig } from "swr";
 import auth from "../../../Firebase.init";
 import useUserEmail from "../../hooks/useUserEmail";
 import Spinner from "../../Shared/Spinner/Spinner";
+import { toast } from "react-toastify";
 
 const AddInventory = () => {
   const { mutate } = useSWRConfig();
@@ -40,7 +41,15 @@ const AddInventory = () => {
         mutate(
           `https://the-treasure-chest.herokuapp.com/myinventory?email=${email}`
         );
-        console.log("use toast");
+        toast.success("Added Successfully", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       }
     } catch (error) {
       console.log(error);

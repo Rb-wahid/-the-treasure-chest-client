@@ -7,6 +7,7 @@ import useUserEmail from "../../hooks/useUserEmail";
 import Spinner from "../../Shared/Spinner/Spinner";
 import { signOut } from "firebase/auth";
 import auth from "../../../Firebase.init";
+import { toast } from "react-toastify";
 
 const InventoryDetails = () => {
   const { mutate } = useSWRConfig();
@@ -63,7 +64,15 @@ const InventoryDetails = () => {
       );
       if (data.modifiedCount) {
         mutate(URL);
-        console.log("use here toast");
+        toast.success("Updated Successfully", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       }
     } catch (error) {
       console.log(error);

@@ -8,6 +8,7 @@ import auth from "../../../Firebase.init";
 import useToken from "../../hooks/useToken";
 import Spinner from "../../Shared/Spinner/Spinner";
 import SocialSignin from "../SocialSignin/SocialSignin";
+import { toast } from "react-toastify";
 
 const Signin = () => {
   const emailRef = useRef("");
@@ -43,6 +44,15 @@ const Signin = () => {
     } else {
       setHasEmail(true);
       await sendPasswordResetEmail(email);
+      toast.success("Send Reset Password Email", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
   if (isLoading) return <Spinner />;
