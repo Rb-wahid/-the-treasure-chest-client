@@ -20,7 +20,7 @@ const AddInventory = () => {
       quantity: e.target.quantity.value,
       description: e.target.description.value,
       supplier: e.target.supplier.value,
-      imgurl: e.target.imgurl.value,
+      img: e.target.imgurl.value,
       email: e.target.email.value,
       sold: 0,
     };
@@ -47,15 +47,19 @@ const AddInventory = () => {
     }
     setLoading(false);
   };
-  if (loadingUser || loading) return <Spinner />;
 
   return (
-    <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto my-10">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group mb-6">
-          <input
-            type="text"
-            className="form-control block
+    <>
+      {loadingUser || loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto my-10">
+            <form onSubmit={handleSubmit}>
+              <div className="form-group mb-6">
+                <input
+                  type="text"
+                  className="form-control block
         w-full
         px-3
         py-1.5
@@ -69,19 +73,19 @@ const AddInventory = () => {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            id="exampleInput125"
-            placeholder="Book name"
-            name="name"
-            required
-          />
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="form-group mb-6">
-            <input
-              type="number"
-              step={"any"}
-              min={1}
-              className="form-control
+                  id="exampleInput125"
+                  placeholder="Book name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="form-group mb-6">
+                  <input
+                    type="number"
+                    step={"any"}
+                    min={1}
+                    className="form-control
           block
           w-full
           px-3
@@ -96,17 +100,17 @@ const AddInventory = () => {
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              name="price"
-              placeholder="Price"
-              required
-            />
-          </div>
-          <div className="form-group mb-6">
-            <input
-              type="number"
-              step={"any"}
-              min={1}
-              className="form-control
+                    name="price"
+                    placeholder="Price"
+                    required
+                  />
+                </div>
+                <div className="form-group mb-6">
+                  <input
+                    type="number"
+                    step={"any"}
+                    min={1}
+                    className="form-control
           block
           w-full
           px-3
@@ -121,16 +125,16 @@ const AddInventory = () => {
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              name="quantity"
-              placeholder="Quantity"
-              required
-            />
-          </div>
-        </div>
+                    name="quantity"
+                    placeholder="Quantity"
+                    required
+                  />
+                </div>
+              </div>
 
-        <div className="form-group mb-6">
-          <textarea
-            className="
+              <div className="form-group mb-6">
+                <textarea
+                  className="
         form-control
         block
         w-full
@@ -147,17 +151,17 @@ const AddInventory = () => {
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
       "
-            id="exampleFormControlTextarea13"
-            rows="3"
-            placeholder="Description"
-            name="description"
-            required
-          ></textarea>
-        </div>
-        <div className="form-group mb-6">
-          <input
-            type="text"
-            className="form-control block
+                  id="exampleFormControlTextarea13"
+                  rows="3"
+                  placeholder="Description"
+                  name="description"
+                  required
+                ></textarea>
+              </div>
+              <div className="form-group mb-6">
+                <input
+                  type="text"
+                  className="form-control block
         w-full
         px-3
         py-1.5
@@ -171,17 +175,17 @@ const AddInventory = () => {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            id="exampleInput126"
-            placeholder="Supplier name"
-            name="supplier"
-            defaultValue={user.displayName}
-            disabled
-          />
-        </div>
-        <div className="form-group mb-6">
-          <input
-            type="url"
-            className="form-control block
+                  id="exampleInput126"
+                  placeholder="Supplier name"
+                  name="supplier"
+                  defaultValue={user?.displayName}
+                  disabled
+                />
+              </div>
+              <div className="form-group mb-6">
+                <input
+                  type="url"
+                  className="form-control block
         w-full
         px-3
         py-1.5
@@ -195,15 +199,15 @@ const AddInventory = () => {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            placeholder="Image url"
-            name="imgurl"
-            required
-          />
-        </div>
-        <div className="form-group mb-6">
-          <input
-            type="email"
-            className="form-control block
+                  placeholder="Image url"
+                  name="imgurl"
+                  required
+                />
+              </div>
+              <div className="form-group mb-6">
+                <input
+                  type="email"
+                  className="form-control block
         w-full
         px-3
         py-1.5
@@ -217,16 +221,16 @@ const AddInventory = () => {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            id="exampleInput126"
-            placeholder="your email"
-            name="email"
-            defaultValue={user.email}
-            disabled
-          />
-        </div>
-        <button
-          type="submit"
-          className="
+                  id="exampleInput126"
+                  placeholder="your email"
+                  name="email"
+                  defaultValue={user.email}
+                  disabled
+                />
+              </div>
+              <button
+                type="submit"
+                className="
       w-full
       px-6
       py-2.5
@@ -244,11 +248,14 @@ const AddInventory = () => {
       transition
       duration-150
       ease-in-out"
-        >
-          Add Inventory
-        </button>
-      </form>
-    </div>
+              >
+                Add Inventory
+              </button>
+            </form>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
