@@ -160,7 +160,7 @@ const Footer = () => {
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
       >
         © {new Date().getFullYear()} Copyright:
-        <Link className="text-gray-50 font-semibold pl-2" to="">
+        <Link className="text-gray-50 font-semibold pl-2" to="/">
           THE TREASURE CHEST
         </Link>
       </div>

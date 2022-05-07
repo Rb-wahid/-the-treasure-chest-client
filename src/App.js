@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Pages/Shared/Header/Header";
+import Home from "./Pages/Home/Home";
+import "tw-elements";
+import { Route, Routes } from "react-router-dom";
+import InventoryDetails from "./Pages/Services/InventoryDetails/InventoryDetails";
+import ManageInventories from "./Pages/Services/ManageInventories/ManageInventories";
+import Signin from "./Pages/Auth/Signin/Signin";
+import Signup from "./Pages/Auth/Signup/Signup";
+import PrivateRoute from "./Pages/Auth/PrivateRoute/PrivateRoute";
+import MyItems from "./Pages/Services/MyItems/MyItems";
+import NotFound from "./Pages/Shared/NotFound/NotFound";
+import Blogs from "./Pages/Blogs/Blogs";
+import InventoryReport from "./Pages/InventoryReport/InventoryReport";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/manageinventories" element={<ManageInventories />} />
+
+        <Route
+          path="/manageinventories/*"
+          element={
+            <PrivateRoute>
+              <ManageInventories />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="inventorydetails/:id"
+          element={
+            <PrivateRoute>
+              <InventoryDetails />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/myitems" element={<MyItems />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/inventoryreport" element={<InventoryReport />} />
+
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
