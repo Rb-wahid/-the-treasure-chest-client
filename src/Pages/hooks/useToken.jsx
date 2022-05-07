@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import useUserEmail from "./useUserEmail";
 
-const useToken = (user) => {
+const useToken = () => {
   const [email, loading] = useUserEmail();
   const [token, setToken] = useState("");
   useEffect(() => {
@@ -13,7 +13,7 @@ const useToken = (user) => {
       setToken(data.token);
       localStorage.setItem("token", data.token);
     };
-    if (!loading) {
+    if (email) {
       fetching();
     }
   }, [email, loading]);

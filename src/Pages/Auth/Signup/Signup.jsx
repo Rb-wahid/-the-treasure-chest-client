@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase.init";
 import {
-  useAuthState,
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
@@ -23,8 +22,7 @@ const Signup = () => {
   ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, errorUpdateProfile] = useUpdateProfile(auth);
 
-  const [user, loadingUser, errorUser] = useAuthState(auth);
-  const [token] = useToken(user);
+  const [token] = useToken(userEmailPass);
   const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
@@ -41,8 +39,8 @@ const Signup = () => {
     }
   };
 
-  let error = errorEmailPass || errorUpdateProfile || errorUser;
-  let isLoading = loadingEmailPass || loadingUser || updating;
+  let error = errorEmailPass || errorUpdateProfile;
+  let isLoading = loadingEmailPass || updating;
 
   useEffect(() => {
     // when got error. Ischecked is true & issue on disabling signup btn.

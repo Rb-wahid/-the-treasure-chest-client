@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import {
-  useAuthState,
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
@@ -21,15 +20,14 @@ const Signin = () => {
   ] = useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, errorResetPass] =
     useSendPasswordResetEmail(auth);
-  const [user, loadingUser, errorUser] = useAuthState(auth);
-  const [token] = useToken(user)
+  const [token] = useToken();
   const [hasEmail, setHasEmail] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  let error = errorUser || errorEmailPass || errorResetPass;
-  let isLoading = loadingEmailPass || loadingUser || sending;
+  let error = errorEmailPass || errorResetPass;
+  let isLoading = loadingEmailPass || sending;
 
   const handleSignin = async (e) => {
     e.preventDefault();
@@ -40,7 +38,6 @@ const Signin = () => {
 
   const handleResetPass = async () => {
     const email = emailRef.current.value;
-    console.log("email", email);
     if (!email) {
       setHasEmail(false);
     } else {
