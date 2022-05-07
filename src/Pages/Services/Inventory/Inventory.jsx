@@ -7,7 +7,7 @@ const Inventory = ({
   const navigate = useNavigate();
   return (
     <div className="text-center">
-      <h5 className="text-blue-500 text-3xl font-bold pb-2 rounded-lg bg-white shadow-lg">
+      <h5 className="text-blue-500 text-2xl font-semibold pb-2 rounded-lg bg-white shadow-sm italic hover:animate-pulse">
         {name}
       </h5>
       <div className="flex justify-center my-5 hover:animate-pulse">
