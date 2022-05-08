@@ -10,6 +10,7 @@ import PrivateRoute from "./Pages/Auth/PrivateRoute/PrivateRoute";
 import MyItems from "./Pages/Services/MyItems/MyItems";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Blogs from "./Pages/Blogs/Blogs";
+import About from "./Pages/About/About"
 import InventoryReport from "./Pages/InventoryReport/InventoryReport";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -42,7 +43,7 @@ function App() {
         <Route path="/myitems" element={<MyItems />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/inventoryreport" element={<InventoryReport />} />
-
+        <Route path="/about" element={<About />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
