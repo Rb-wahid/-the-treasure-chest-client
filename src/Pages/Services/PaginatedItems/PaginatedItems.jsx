@@ -15,7 +15,7 @@ const PaginatedItems = () => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get("http://localhost:5000/inventorycount")
+      .get("https://the-treasure-chest.herokuapp.com/inventorycount")
       .then(({ data: { count } }) => {
         const tPage = Math.ceil(count / itemPerPage);
         if (tPage < totalPage) {
@@ -24,7 +24,7 @@ const PaginatedItems = () => {
         setTotalPage(tPage);
       });
     setUrl(
-      `http://localhost:5000/getInventory?page=${currentPage}&count=${itemPerPage}`
+      `https://the-treasure-chest.herokuapp.com/getInventory?page=${currentPage}&count=${itemPerPage}`
     );
 
     setIsLoading(false);
