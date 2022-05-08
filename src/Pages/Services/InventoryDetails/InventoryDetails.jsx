@@ -109,15 +109,21 @@ const InventoryDetails = () => {
               />
               <div className=" relative p-4 md:p-6 pt-0 flex flex-col justify-start">
                 <div className="flex justify-evenly text-gray-700 text-base mb-2 mt-3 md:mt-0">
-                  <p className="">PRICE:$ {price}</p>
-                  <p className="">QUANTITY: {quantity}</p>
-                  <p className="">Sold: {sold}</p>
+                  <p className=" mb-4 font-semibold text-base text-blue-500">
+                    PRICE: <span className="text-red-500">${price}</span>
+                  </p>
+                  <p className="text-blue-500 font-semibold text-base mb-4">
+                    QUANTITY: <span className="text-red-500">{quantity}</span>
+                  </p>
+                  <p className="text-blue-500 text-base mb-4 font-semibold">
+                    SOLD: <span className="text-red-500">{sold}</span>
+                  </p>
                 </div>
                 <p className="text-gray-700 text-base mb-4 text-justify">
                   {description}
                 </p>
-                <p className=" text-left text-xs font-semibold">
-                  SUPPLIER: {supplier}
+                <p className=" text-left text-xs  text-gray-500">
+                  SUPPLIER: <span className="font-semibold">@{supplier}</span>
                 </p>
                 <div className="flex pb-2 md:p-0 my-5  mx-auto w-full md:w-2/3 md:bottom-6 md:inset-x-0 md:absolute">
                   <input

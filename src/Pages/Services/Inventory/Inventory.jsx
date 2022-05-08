@@ -27,7 +27,7 @@ const Inventory = ({
                 QUANTITY: <span className="text-red-500">{quantity}</span>
               </p>
               <p className="text-blue-500 text-base mb-4 font-semibold">
-                sold: <span className="text-red-500">{sold}</span>
+                SOLD: <span className="text-red-500">{sold}</span>
               </p>
             </div>
             <p className="text-gray-700 text-base mb-4 text-justify">
