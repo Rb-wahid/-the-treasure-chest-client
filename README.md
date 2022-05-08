@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Full stack MERN Project - The Treasure Chest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Assignment 11 \_\_ The Treasure Chest - [Live Link](https://the-treasure-chest-14e40.web.app)
 
-## Available Scripts
+## Technology used on Client side
 
-In the project directory, you can run:
+- axios
+- firebase
+- react
+- react-firebase-hooks
+- react-helmet-async
+- react-icons
+- react-router-dom
+- react-toastify
+- recharts
+- swr
+- tw-elements
+- animated-tailwindcss
+- tailwindcss
 
-### `npm start`
+## Technology used on Server side
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- cors
+- dotenv
+- express
+- jsonwebtoken
+- mongodb
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+# Full stack MERN Project - The Treasure Chest
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Assignment 11 \_\_ The Treasure Chest - [Live Link](https://the-treasure-chest-14e40.web.app)
 
-### `npm run build`
+## Technology used on Client side
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- axios
+- firebase
+- react
+- react-firebase-hooks
+- react-helmet-async
+- react-icons
+- react-router-dom
+- react-toastify
+- recharts
+- swr
+- tw-elements
+- animated-tailwindcss
+- tailwindcss
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technology used on Server side
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- cors
+- dotenv
+- express
+- jsonwebtoken
+- mongodb
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Sign In, Sign Up & Sign In with Github functionality using firebase & react-firebase-hooks
+- Reset password & Email verification functionality
+- In every successful sign in & sign up client side received jwt token & store it on local storage.
+- When updating, deleting inventory & accessing my items send received token & in backend verified the authorization. If got 401 || 403 code, In client side user will be sign out and redirect to Sign In page.
+- When updated, deleted & send Reset password, send verification email, shown toast notification.
+- In my items page, fetching data by filtering email and display on UI.
+- restock , delivery & add new Inventory functionality and the database updated
+- nested route
+- protected route and redirected to previous page after sign in
+- Only email verified user can access protected route
+- data fetching by axios & swr
+- setting dynamic page title using react-helmet-async
+- In Inventory Report page, calculating Total Invest, Total Sold & My Total Invest, My Total Sold then shown the data with two chart - Bar chart & Pie chart.
+- Shown spinner when loading
+- Added condition on Sign Up btn & Navbar
+- Handled Active route on Navbar
+- Handled not found page.
+- Used animated-tailwindcss when possible
+- Stored the sensitive data on .env file
+- Designed the UI with help of tw-elements
