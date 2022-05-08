@@ -49,3 +49,4 @@
 - Used animated-tailwindcss when possible
 - Stored the sensitive data on .env file
 - Designed the UI with help of tw-elements
+- Pagination functionality
