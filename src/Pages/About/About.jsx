@@ -8,7 +8,7 @@ const About = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
         <div>
-          <h2 className="text-2xl text-blue-500 font-semibold">
+          <h2 className="text-2xl text-blue-500 font-semibold mb-6">
             Technology used on Client side
           </h2>
           <div className="md:pl-12 animate-backInLeft text-justify">
@@ -28,7 +28,7 @@ const About = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-2xl text-blue-500 font-semibold">
+          <h2 className="text-2xl text-blue-500 font-semibold mb-6">
             Technology used on Server side
           </h2>
           <div className="md:pl-12 animate-backInRight">
@@ -41,7 +41,7 @@ const About = () => {
         </div>
       </div>
       <div className="my-16 max-w-3xl mx-auto">
-        <h2 className="text-3xl text-blue-500 font-semibold text-center">
+        <h2 className="text-3xl text-blue-500 font-semibold text-center mb-6">
           Features
         </h2>
         <div className="md:pl-12 animate-backInUp text-justify">
