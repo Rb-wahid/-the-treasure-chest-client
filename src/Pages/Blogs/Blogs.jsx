@@ -1,8 +1,10 @@
 import React from "react";
+import DynamicTitle from "../Shared/DynamicTitle/DynamicTitle";
 
 const Blogs = () => {
   return (
     <div className="md:max-w-4xl md:mx-auto md:mt-12">
+      <DynamicTitle title={"Blogs"} />
       <div className="accordion accordion-flush" id="accordionFlushExample">
         <div className="accordion-item border-t-0 border-l-0 border-r-0 rounded-none bg-white border border-gray-200">
           <h2 className="accordion-header mb-0" id="flush-headingOne">

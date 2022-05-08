@@ -6,6 +6,7 @@ import auth from "../../../Firebase.init";
 import useUserEmail from "../../hooks/useUserEmail";
 import Spinner from "../../Shared/Spinner/Spinner";
 import { toast } from "react-toastify";
+import DynamicTitle from "../../Shared/DynamicTitle/DynamicTitle";
 
 const AddInventory = () => {
   const { mutate } = useSWRConfig();
@@ -59,6 +60,7 @@ const AddInventory = () => {
 
   return (
     <>
+      <DynamicTitle title={"Add Inventory"} />
       {loadingUser || loading ? (
         <Spinner />
       ) : (

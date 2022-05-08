@@ -7,6 +7,7 @@ import Inventories from "../Inventories/Inventories";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../Firebase.init";
+import DynamicTitle from "../../Shared/DynamicTitle/DynamicTitle";
 
 const ManageInventories = () => {
   let [items, isError, isLoading] = useInventories();
@@ -25,6 +26,7 @@ const ManageInventories = () => {
 
   return (
     <div className="md:max-w-7xl md:mx-auto md:mt-12">
+      <DynamicTitle title={"Manage Inventories"} />
       {error ? (
         <p className=" text-center text-red-700">{error.message}</p>
       ) : (

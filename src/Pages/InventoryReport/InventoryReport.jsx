@@ -4,6 +4,7 @@ import MyBarChart from "../Chart/BarChart/MyBarChart";
 import MyPieChart from "../Chart/PieChart/MyPieChart";
 import useReport from "../hooks/useReport";
 import useUserEmail from "../hooks/useUserEmail";
+import DynamicTitle from "../Shared/DynamicTitle/DynamicTitle";
 const InventoryReport = () => {
   const [email] = useUserEmail();
   const allInventory = "https://the-treasure-chest.herokuapp.com/inventory";
@@ -14,6 +15,7 @@ const InventoryReport = () => {
 
   return (
     <div className="mt-12 flex flex-col justify-center items-center">
+      <DynamicTitle title={"Report"} />
       <div className="grid grid-cols-2 gap-12">
         <div>
           <p className="text-2xl font-semibold text-sky-600">

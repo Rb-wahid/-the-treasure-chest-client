@@ -9,6 +9,7 @@ import useToken from "../../hooks/useToken";
 import Spinner from "../../Shared/Spinner/Spinner";
 import SocialSignin from "../SocialSignin/SocialSignin";
 import { toast } from "react-toastify";
+import DynamicTitle from "../../Shared/DynamicTitle/DynamicTitle";
 
 const Signin = () => {
   const emailRef = useRef("");
@@ -62,6 +63,7 @@ const Signin = () => {
   }
   return (
     <section>
+      <DynamicTitle title={"Sign In"}/>
       <div className="container px-6 py-12 h-full">
         <div className="flex flex-col justify-center items-center flex-wrap h-full g-6 text-gray-800">
           <h2 className="px-6 py-3 font-semibold text-xl md:text-4xl italic hover:not-italic text-blue-500 mb-5 md:mb-10 md:shadow-lg shadow-slate-200">

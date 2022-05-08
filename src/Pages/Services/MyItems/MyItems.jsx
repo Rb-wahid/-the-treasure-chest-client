@@ -7,6 +7,7 @@ import DisplayInvevtory from "../DisplayInvevtory/DisplayInvevtory";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../Firebase.init";
+import DynamicTitle from "../../Shared/DynamicTitle/DynamicTitle";
 
 const MyItems = () => {
   const [email, loadingUser, errorUser] = useUserEmail();
@@ -25,6 +26,7 @@ const MyItems = () => {
 
   return (
     <div>
+      <DynamicTitle title={"My Items"} />
       {error ? (
         <p className="md:max-w-7xl md:mx-auto md:mt-12 text-center text-red-700">
           {error.message}

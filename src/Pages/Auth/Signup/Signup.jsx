@@ -8,6 +8,7 @@ import {
 import SocialSignin from "../SocialSignin/SocialSignin";
 import Spinner from "../../Shared/Spinner/Spinner";
 import useToken from "../../hooks/useToken";
+import DynamicTitle from "../../Shared/DynamicTitle/DynamicTitle";
 
 const Signup = () => {
   const nameRef = useRef("");
@@ -58,6 +59,7 @@ const Signup = () => {
 
   return (
     <section>
+      <DynamicTitle title={"Sign Up"} />
       <div className="container px-6 py-12 h-full">
         <div className="flex flex-col justify-center items-center flex-wrap h-full g-6 text-gray-800">
           <h2 className="px-6 py-3 font-semibold text-xl md:text-4xl italic hover:animate-pulse text-blue-500 mb-5 md:mb-10 md:shadow-lg shadow-slate-200">

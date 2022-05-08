@@ -4,11 +4,13 @@ import bg from "../../../assets/logo/bg.svg";
 import dog from "../../../assets/logo/dog.png";
 import error from "../../../assets/logo/error.png";
 import neutral from "../../../assets/logo/neutral.png";
+import DynamicTitle from "../DynamicTitle/DynamicTitle";
 
 const NotFound = () => {
   const navigate = useNavigate();
   return (
     <>
+      <DynamicTitle title={"404"}/>
       {/* Not Found page for Desk top */}
       <div className=" hidden md:block -mt-24 w-screen h-screen object-cover  relative bg-[#A0C3D2]">
         <div className="h-screen flex justify-center text-6xl font-extrabold md:pt-56">

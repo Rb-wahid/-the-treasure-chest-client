@@ -5,12 +5,14 @@ import ContactUs from "./ContactUs/ContactUs";
 import Facilities from "./Facilities/Facilities";
 import header from "../../assets/header.avif";
 import { useNavigate } from "react-router-dom";
+import DynamicTitle from "../Shared/DynamicTitle/DynamicTitle";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
     <div>
+      <DynamicTitle title={"Home"} />
       <div className="relative flex items-center justify-center">
         <img
           className=" w-full h-[400px] backdrop-contrast-200 blur-[2px]"
