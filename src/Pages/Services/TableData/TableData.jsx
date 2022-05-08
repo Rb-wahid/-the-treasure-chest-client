@@ -2,6 +2,7 @@
 import axios from "axios";
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
+import { toast } from "react-toastify";
 import { useSWRConfig } from "swr";
 import useUserEmail from "../../hooks/useUserEmail";
 
@@ -26,14 +27,21 @@ const TableData = ({
             auth: `${localStorage.getItem("token")}`,
           },
         });
-        console.log("after delete", data);
 
         if (data.deletedCount > 0) {
           mutate(`https://the-treasure-chest.herokuapp.com/inventory`);
           mutate(
             `https://the-treasure-chest.herokuapp.com/myinventory?email=${userEmail}`
           );
-          console.log("from delete use a toast ", name, _id);
+          toast.success("Successfully Deleted", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         }
       } catch (error) {
         console.log(error);
