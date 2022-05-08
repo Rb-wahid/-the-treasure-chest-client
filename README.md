@@ -2,35 +2,6 @@
 
 ## Assignment 11 \_\_ The Treasure Chest - [Live Link](https://the-treasure-chest-14e40.web.app)
 
-## Technology used on Client side
-
-- axios
-- firebase
-- react
-- react-firebase-hooks
-- react-helmet-async
-- react-icons
-- react-router-dom
-- react-toastify
-- recharts
-- swr
-- tw-elements
-- animated-tailwindcss
-- tailwindcss
-
-## Technology used on Server side
-
-- cors
-- dotenv
-- express
-- jsonwebtoken
-- mongodb
-
-## Features
-
-# Full stack MERN Project - The Treasure Chest
-
-## Assignment 11 \_\_ The Treasure Chest - [Live Link](https://the-treasure-chest-14e40.web.app)
 
 ## Technology used on Client side
 
